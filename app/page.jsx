@@ -32,7 +32,7 @@ export default function Home() {
 					pr: 2,
 					backgroundPosition: "center bottom",
 					backgroundColor: "#303346",
-					borderRadius: 8,
+					borderRadius: 2,
 				}}
 				minWidth="100%"
 				boxShadow="#000 0px 4px 32px"
