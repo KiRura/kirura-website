@@ -1,0 +1,28 @@
+{
+  "name": "kirura-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^5.16.5",
+    "@mui/material": "^5.16.5",
+    "@mui/material-nextjs": "^5.16.4",
+    "next": "^14.2.5",
+    "react-device-detect": "^2.2.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "vercel": "35.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
