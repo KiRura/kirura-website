@@ -28,9 +28,12 @@ export async function GET(request) {
 		},
 	);
 
-	return NextResponse.json((await res.json()).content === "true", {
-		status: 200,
-	});
+	return NextResponse.json(
+		{ night: (await res.json()).content === "true" },
+		{
+			status: 200,
+		},
+	);
 }
 
 /**
