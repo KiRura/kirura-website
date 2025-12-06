@@ -1,4 +1,4 @@
-import { Code, Home, SmartToy } from "@mui/icons-material";
+import { Code, Home } from "@mui/icons-material";
 import {
 	AppBar,
 	Box,

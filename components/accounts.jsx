@@ -128,7 +128,7 @@ const accounts = [
 ];
 
 export default function Accounts() {
-	return accounts.map((data, i) => {
+	return accounts.map((data, _i) => {
 		return (
 			<Grid
 				key={data.id}

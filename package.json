@@ -1,29 +1,32 @@
 {
-  "name": "kirura-website",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
-    "@mui/icons-material": "^5.16.5",
-    "@mui/material": "^5.16.5",
-    "@mui/material-nextjs": "^5.16.4",
-    "discord.js": "^14.15.3",
-    "next": "^14.2.5",
-    "react-device-detect": "^2.2.3"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.8.3",
-    "vercel": "35.2.1"
-  },
-  "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  }
+	"name": "kirura-website",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"check": "biome check --write --unsafe ."
+	},
+	"dependencies": {
+		"@emotion/react": "^11.14.0",
+		"@emotion/styled": "^11.14.1",
+		"@mui/icons-material": "^5.18.0",
+		"@mui/material": "^5.18.0",
+		"@mui/material-nextjs": "^5.18.0",
+		"discord.js": "^14.25.1",
+		"next": "14",
+		"react-device-detect": "^2.2.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.3.8",
+		"vercel": "35.2.1"
+	},
+	"peerDependencies": {
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"trustedDependencies": [
+		"@biomejs/biome"
+	]
 }

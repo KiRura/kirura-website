@@ -1,10 +1,9 @@
 "use client";
 
-import Accounts from "@/components/accounts";
-import Aria from "@/components/aria";
 import { Box, Container, Link, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import React from "react";
+import Accounts from "@/components/accounts";
+import Aria from "@/components/aria";
 
 export default function Home() {
 	return (
