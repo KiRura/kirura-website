@@ -1,106 +1,152 @@
 "use client";
 
-import { Box, Container, Link, Typography } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
-import Accounts from "@/components/accounts";
+import { Link as NextLink } from "@chakra-ui/next-js";
+import {
+	Button,
+	Card,
+	CardBody,
+	CardFooter,
+	Container,
+	Flex,
+	Heading,
+	Highlight,
+	Icon,
+	Link,
+	SimpleGrid,
+	Stack,
+	Text,
+} from "@chakra-ui/react";
+import { MdOpenInNew, MdWeb } from "react-icons/md";
 import Aria from "@/components/aria";
+import Accounts from "./accounts";
+import { Intro } from "./intro";
 
 export default function Home() {
 	return (
 		<Container
-			maxWidth="lg"
-			sx={{
-				display: "flex",
-				flexDirection: "column",
-				justifyContent: "center",
-				alignItems: "center",
-			}}
+			maxW="8xl"
+			as="main"
+			minH={{ base: "100vh", sm: "100vh", md: "fit-content" }}
 		>
-			<Box
-				// 横にボタンを置くつもりだった
-				sx={{
-					flexDirection: "column",
-					mb: 3,
-					display: "flex",
-					justifyContent: "space-between",
-					alignItems: "center",
-					backgroundImage: "url(/wallpaper.jpg)",
-					backgroundRepeat: "no-repeat",
-					backgroundSize: "100%",
-					pl: 2,
-					pr: 2,
-					backgroundPosition: "center bottom",
-					backgroundColor: "#303346",
-					borderRadius: 2,
-				}}
-				minWidth="100%"
-				boxShadow="#000 0px 4px 32px"
+			<Flex
+				my={32}
+				// mt={{ base: 4, sm: 4, md: 0 }}
+				align="center"
+				// align="center"
+				// bgImage="url(/wallpaper.jpg)"
+				// bgRepeat="no-repeat"
+				// bgSize={800}
+				// bgPos="bottom right"
+				// bgColor="#303346"
+				// borderRadius="md"
+				w="100%"
+				direction="column"
 			>
-				<Typography
-					width="100%"
-					fontWeight="100"
-					fontStyle="italic"
-					sx={{
-						textShadow: "#FFF 0px 0px 12px",
-					}}
-					fontSize={{ xs: "4.75em", sm: "5.5em", md: "5.5em" }}
-				>
+				<Heading as="h1" size="4xl" mb={8}>
 					Hello!
 					<br />
-					きるら,
-					<br />
-					{"(7)"}KiRura,
-				</Typography>
-			</Box>
-			<Aria title="ゆた鯖">
-				<Typography>
-					→ ってなんだよ！: 人の集まり / Discordサーバーです
-					<br />→ ってどんな場所: 身内ノリ多め
-					<br />→ に入ったら良い事ある？: とても良い事も悪い事もあります
-					<br />→ の招待寄越せ:{" "}
-					{
-						<Link
-							href="https://discord.com/invite/WhBMHHzGE5"
-							target="_blank"
-							rel="noreferrer"
-						>
-							どうぞ
-						</Link>
-					}
-				</Typography>
-			</Aria>
-			<Aria title="他リンク">
-				<Grid
-					container
-					spacing={{ xs: 2, sm: 3, md: 3 }}
-					columns={{ xs: 0, sm: 3, md: 4 }}
+					<Highlight
+						query={["きるら", "(7)KiRura"]}
+						styles={{ color: "orange.500", _dark: { color: "orange.200" } }}
+					>
+						きるら, (7)KiRura,
+					</Highlight>
+				</Heading>
+				<Link
+					as={NextLink}
+					href="https://kirura-website-chakra-v3.vercel.app"
+					isExternal
+					fontStyle="italic"
+				>
+					New Design Website <Icon as={MdOpenInNew} boxSize={4} />
+				</Link>
+			</Flex>
+
+			<Container maxW="6xl">
+				<Aria
+					title="Discord鯖"
+					mt={{ base: 4, sm: 4, md: 0 }}
+					titleAlign="center"
+					titleMb={4}
+					mb={8}
+				>
+					<SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} mt={6}>
+						<Card borderRadius="3xl">
+							<CardBody>
+								<Aria
+									title="きるらの色々"
+									titleSize="lg"
+									iconImage="/kirura.png"
+								>
+									<Text>
+										俺がいるただのDiscord鯖
+										<br />
+										GitLabの通知とか変なのを観測できる
+									</Text>
+								</Aria>
+							</CardBody>
+							<CardFooter justify="end">
+								<Button
+									leftIcon={<Icon as={MdOpenInNew} />}
+									as={NextLink}
+									href="https://discord.gg/JUyg7nu6pr"
+									isExternal
+									colorScheme="orange"
+								>
+									招待リンク
+								</Button>
+							</CardFooter>
+						</Card>
+						<Card borderRadius="3xl">
+							<CardBody>
+								<Aria title="ゆた鯖" titleSize="lg">
+									<Text>
+										→ ってなんだよ！: 人の集まり / Discord鯖
+										<br />→ ってどんな場所: 身内ノリ多め
+										<br />→ に入ったら良い事ある？: とても良い事も悪い事もある
+									</Text>
+								</Aria>
+							</CardBody>
+							<CardFooter justify="end">
+								<Stack direction="row" spacing={2}>
+									<Button
+										as={NextLink}
+										href="https://discord.gg/WhBMHHzGE5"
+										leftIcon={<Icon as={MdOpenInNew} />}
+										isExternal
+										whiteSpace="normal"
+										overflowWrap="anywhere"
+									>
+										招待リンク
+									</Button>
+									<Button
+										as={NextLink}
+										href="https://yutasaba-283153b1-632d-4bf9-a6f6-8a9dac76272d.vercel.app/"
+										leftIcon={<Icon as={MdWeb} />}
+										isExternal
+										variant="outline"
+										whiteSpace="normal"
+										overflowWrap="anywhere"
+									>
+										Webサイト
+									</Button>
+								</Stack>
+							</CardFooter>
+						</Card>
+					</SimpleGrid>
+				</Aria>
+			</Container>
+			<Aria title="他リンク" titleAlign="center" titleMb={4} mb={8}>
+				<SimpleGrid
+					spacing={2}
+					columns={{ base: 1, sm: 1, md: 2, lg: 3, xl: 4 }}
+					mt={6}
 				>
 					<Accounts />
-				</Grid>
+				</SimpleGrid>
 			</Aria>
-			<Aria title="自己紹介">
-				<Typography>
-					YMM4・JavaScript(
-					<Link href="https://github.com/KiRura#discord-bot" target="_blank">
-						Discord BOT開発
-					</Link>
-					)・Kotlin(Androidアプリ開発)などをちょっとだけ齧ってる
-					<br />
-					高2 / 16歳
-					<br />
-					<br />
-					好き: ドゥームフィスト・ラマットラ・バスティオン・miHoYoの大部分・
-					<Link
-						href="https://lit.link/tallemiella"
-						target="_blank"
-						rel="noreferrer"
-					>
-						タルレミ・エラ
-					</Link>
-					<br />
-					嫌い:
-					今の高校・Google・Apple・Microsoft・Discord・アビス・ブリーズ・miHoYoの一部
-				</Typography>
+			<Aria title="自己紹介" mb={6} titleAlign="center" titleMb={4}>
+				<Intro />
 			</Aria>
 		</Container>
 	);

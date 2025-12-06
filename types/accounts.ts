@@ -1,8 +1,9 @@
+import type { IconType } from "react-icons";
+
 export type Accounts = {
-	id: number;
 	name: string;
 	accountId: string;
 	description: string;
 	href: string;
-	icon?: JSX.Element;
+	icon?: IconType;
 };

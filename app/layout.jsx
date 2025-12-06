@@ -1,7 +1,6 @@
-import { Box, CssBaseline, ThemeProvider } from "@mui/material";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
-import Header from "@/components/header";
-import theme from "@/theme";
+import Footer from "./footer";
+import Header from "./header";
+import { Providers } from "./providers";
 
 /**
  * @type {import("next").Metadata}
@@ -23,22 +22,15 @@ export const metadata = {
 	},
 };
 
-export default function RootLayout(props) {
+export default function RootLayout({ children }) {
 	return (
 		<html lang="ja">
 			<body>
-				<AppRouterCacheProvider options={{ enableCssLayer: true }}>
-					<ThemeProvider theme={theme}>
-						<CssBaseline />
-						<header>
-							<Header />
-						</header>
-						<main>{props.children}</main>
-						<footer>
-							<Box sx={{ mb: 4 }} />
-						</footer>
-					</ThemeProvider>
-				</AppRouterCacheProvider>
+				<Providers>
+					<Header />
+					{children}
+					<Footer />
+				</Providers>
 			</body>
 		</html>
 	);

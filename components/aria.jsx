@@ -1,30 +1,36 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Avatar, Box, Divider, Heading, Stack } from "@chakra-ui/react";
 
-/**
- * @param {import("@/data/ariaData").AriaData} props
- */
-export default function Aria(props) {
+export default function Aria({
+	title,
+	titleSize,
+	titleAlign,
+	titleTextAlign,
+	titleMb,
+	iconImage,
+	children,
+	...rest
+}) {
 	return (
-		<Box
-			sx={{
-				flexDirection: "column",
-				justifyContent: "start",
-				alignItems: "start",
-				mb: 4,
-				display: "flex",
-			}}
-			minWidth="100%"
-		>
-			<Typography variant="h2" fontWeight="bold" sx={{ mr: 2, mb: 2 }}>
-				{props.title}
-			</Typography>
-			<Divider
-				flexItem
-				sx={{
-					mb: 2.5,
-				}}
-			/>
-			{props.children}
+		<Box {...rest}>
+			<Stack
+				justify={titleAlign}
+				align="center"
+				mb={titleMb === undefined ? 2 : titleMb}
+				direction="row"
+				spacing={2}
+			>
+				{iconImage ? <Avatar src={iconImage} /> : <></>}
+				<Heading
+					as="h2"
+					fontWeight="bold"
+					size={titleSize || "xl"}
+					textAlign={titleTextAlign}
+				>
+					{title}
+				</Heading>
+			</Stack>
+			<Divider mb={2} />
+			{children}
 		</Box>
 	);
 }

@@ -18,7 +18,7 @@ export async function GET(request) {
 		);
 	const res = await fetch(
 		new URL(
-			"https://discord.com/api/v10/channels/1267167883377774663/messages/1267178946143850567",
+			"https://discord.com/api/v10/channels/1267167883377774663/messages",
 		),
 		{
 			headers: {
@@ -29,7 +29,7 @@ export async function GET(request) {
 	);
 
 	return NextResponse.json(
-		{ night: (await res.json()).content === "true" },
+		{ night: (await res.json())[0].content === "true" },
 		{
 			status: 200,
 		},
@@ -66,7 +66,7 @@ export async function POST(request) {
 
 	const res = await fetch(
 		new URL(
-			"https://discord.com/api/v10/channels/1267167883377774663/messages/1267178946143850567",
+			"https://discord.com/api/v10/channels/1267167883377774663/messages",
 		),
 		{
 			headers: {
@@ -78,7 +78,7 @@ export async function POST(request) {
 					content: `${body.night}`,
 				}),
 			),
-			method: "PATCH",
+			method: "POST",
 		},
 	);
 
