@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"check": "biome check --write --unsafe ."
+		"fmt": "prettier --write ."
 	},
 	"dependencies": {
 		"@emotion/react": "^11.14.0",
@@ -14,19 +14,12 @@
 		"@mui/icons-material": "^5.18.0",
 		"@mui/material": "^5.18.0",
 		"@mui/material-nextjs": "^5.18.0",
-		"discord.js": "^14.25.1",
-		"next": "14",
-		"react-device-detect": "^2.2.3"
+		"next": "^16.3.6",
+		"react-device-detect": "^2.2.3",
+		"react": "^19.3.0",
+		"react-dom": "^19.3.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.3.8",
-		"vercel": "35.2.1"
-	},
-	"peerDependencies": {
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
-	},
-	"trustedDependencies": [
-		"@biomejs/biome"
-	]
+		"prettier": "^3.9.9"
+	}
 }
