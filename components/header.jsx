@@ -40,7 +40,7 @@ export default function Header() {
 						}}
 					>
 						<Tooltip title="Home">
-							<IconButton href="/">
+							<IconButton href="/" LinkComponent={NextLink}>
 								<Home />
 							</IconButton>
 						</Tooltip>
